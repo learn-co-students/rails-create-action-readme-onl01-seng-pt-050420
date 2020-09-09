@@ -22,7 +22,7 @@ will see output similar to the following:
  (0.1ms)  begin transaction
 SQL (0.3ms)  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2015-11-23 22:26:43.799742"], ["updated_at", "2015-11-23 22:26:43.799742"]]
  (1.2ms)  commit transaction
-=> true
+=> true 
 ```
 
 As you can see, the `save` method generates a SQL script that inserts a new
