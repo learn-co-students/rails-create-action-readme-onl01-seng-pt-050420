@@ -40,3 +40,63 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-09 18:30:09.456983"], ["updated_at", "2020-09-09 18:30:09.456983"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 71.197.15.109 at 2020-09-09 18:46:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (41.9ms)
+Completed 200 OK in 112ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 71.197.15.109 at 2020-09-09 18:46:47 +0000
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 669ms (Views: 648.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/posts" for 71.197.15.109 at 2020-09-09 18:47:01 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjGcfo+1e54qJmz5j0WsjSqT6U91HXlFKVB6JzoqjoXyWztbm4ge8Ra7ldnDKNiyIh9E1WLtxFpZ2x0+PnPblw==", "title"=>"New Post", "description"=>"This is a new post!", "commit"=>"Submit Post"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Post"], ["description", "This is a new post!"], ["created_at", "2020-09-09 18:47:01.934253"], ["updated_at", "2020-09-09 18:47:01.934253"]]
+  [1m[35m (31.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 108ms (ActiveRecord: 35.4ms)
+
+
+Started GET "/posts/new" for 71.197.15.109 at 2020-09-09 18:49:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 541ms (Views: 445.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/posts" for 71.197.15.109 at 2020-09-09 18:49:45 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CO7ZFPUx90GZSN3kn00Vzd9XRu+Y/gB0N4P3bEZG/ks4hH4x4QySLqXVJMTTIGHy19vrdY8OvWtHCJB1Qh+rWQ==", "title"=>"New Post", "description"=>"This is a new post!", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Post"], ["description", "This is a new post!"], ["created_at", "2020-09-09 18:49:45.716083"], ["updated_at", "2020-09-09 18:49:45.716083"]]
+  [1m[35m (49.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://67.205.188.72:44906/posts/3
+Completed 302 Found in 68ms (ActiveRecord: 50.6ms)
+
+
+Started GET "/posts/3" for 71.197.15.109 at 2020-09-09 18:49:45 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 134ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
